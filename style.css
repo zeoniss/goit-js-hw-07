@@ -1,0 +1,12 @@
+.image {
+    width: 200px;
+    height: 200px;
+    margin-right: 55px;
+    background-color: white;
+}
+
+#gallery {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
