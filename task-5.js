@@ -1,7 +1,7 @@
-const elemInput = document.querySelector('#name-input')
+const inputEl = document.querySelector('#name-input')
 const nameOutputEl = document.querySelector('#name-output')
 
-elemInput.addEventListener('input', onNameOutput)
+inputEl.addEventListener('input', onNameOutput)
 
 function onNameOutput(event) {
     if (event.currentTarget.value !== ``) {
