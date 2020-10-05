@@ -2,6 +2,18 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+#validation-input {
+    border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+    border-color: #4caf50;
+}
+
+#validation-input.invalid {
+    border-color: #f44336;
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -44,18 +56,6 @@ body {
 .btn.active {
     color: #fff;
     background-color: #2196f3;
-}
-
-#validation-input {
-    border: 3px solid #bdbdbd;
-}
-
-#validation-input.valid {
-    border-color: #4caf50;
-}
-
-#validation-input.invalid {
-    border-color: #f44336;
 }
 
 .image {
