@@ -11,15 +11,14 @@ let counterValue = 0
 incrementBtnEl.addEventListener('click', onIncrementClick)
 decrementBtnEl.addEventListener('click', onDecrementClick)
 
-function onIncrementClick(event) {
+function onIncrementClick() {
     counterValue += 1
     valueEl.textContent = counterValue
+    console.log(onIncrementClick)
 }
-onIncrementClick()
 
-function onDecrementClick(event) {
+function onDecrementClick() {
     counterValue -= 1
     valueEl.textContent = counterValue
-    console.log(decrementBtnEl)
+    console.log(onDecrementClick)
 }
-onDecrementClick()

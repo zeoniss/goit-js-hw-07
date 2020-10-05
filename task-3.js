@@ -13,13 +13,13 @@ const images = [{
         class: 'image',
         alt: 'Group of Horses Running',
     },
-];
-console.log(images);
-const galleryElem = document.querySelector('#gallery');
+]
+console.log(images)
+const galleryElem = document.querySelector('#gallery')
 
-images.forEach(image => {
+images.map((image) => {
     galleryElem.insertAdjacentHTML(
         'beforeEnd',
-        `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`
-    );
-});
+        `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`,
+    )
+})
