@@ -13,13 +13,26 @@ const images = [{
         class: 'image',
         alt: 'Group of Horses Running',
     },
-]
-console.log(images)
-const galleryElem = document.querySelector('#gallery')
+];
+// console.log(images)
+// const galleryElem = document.querySelector('#gallery')
 
-images.map((image) => {
-    galleryElem.insertAdjacentHTML(
-        'beforeEnd',
-        `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`,
-    )
-})
+// images.map((image) => {
+//     galleryElem.insertAdjacentHTML(
+//         'beforeEnd',
+//         `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`,
+//     )
+// })
+const listImagesRef = document.querySelector('#gallery');
+const imagesMarkup = createListImages(images);
+listImagesRef.insertAdjacentHTML('beforeend', imagesMarkup);
+
+function createListImages(images) {
+    return images
+        .map(({ url, alt }) => {
+            return `<li><img src="${url}" alt="${alt}"></li>`;
+        })
+        .join('');
+}
+
+console.log(createListImages(images));
