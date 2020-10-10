@@ -1,38 +1,25 @@
 const images = [{
         url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        class: 'image',
         alt: 'White and Black Long Fur Cat',
     },
     {
         url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        class: 'image',
         alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
     },
     {
         url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        class: 'image',
         alt: 'Group of Horses Running',
     },
-];
-// console.log(images)
-// const galleryElem = document.querySelector('#gallery')
+]
 
-// images.map((image) => {
-//     galleryElem.insertAdjacentHTML(
-//         'beforeEnd',
-//         `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`,
-//     )
-// })
-const listImagesRef = document.querySelector('#gallery');
-const imagesMarkup = createListImages(images);
-listImagesRef.insertAdjacentHTML('beforeend', imagesMarkup);
+const listImagesRef = document.querySelector('#gallery')
+const imagesCreate = imagesList(images)
 
-function createListImages(images) {
-    return images
-        .map(({ url, alt }) => {
-            return `<li><img src="${url}" alt="${alt}"></li>`;
-        })
-        .join('');
+function imagesList(images) {
+    return images.map(({ url, alt }) => {
+        return `<li><img src="${url}" alt="${alt}"></li>`
+    })
 }
+listImagesRef.insertAdjacentHTML('beforeend', imagesCreate)
 
-console.log(createListImages(images));
+console.log(imagesList(images))
