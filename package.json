@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "build": "babel node_modules -d dist",
+        "server": "node server.js"
+    }
+}
