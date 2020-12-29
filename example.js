@@ -1,25 +1,20 @@
-const nav = document.querySelector('.js-nav')
+const btn = document.querySelector('#btn');
 
-nav.addEventListener('click', handleNavClick)
+// event - это и есть обьект события который автоматически
+// передается первым аргументом, мы можем называть его как угодно,
+// хоть qwerty, но чаще всего он называется или e, evt или event
 
-function handleNavClick(event) {
-    event.preventDefault()
+const handleClick = event => {
+    console.log('event: ', event); //откройте консоль чтобы увидеть весь объект целиком
 
-    const target = event.target
-    console.log('event target: ', target) // посмотрите что тут
+    console.log('event type: ', event.type); // event type:  click
 
-    // Проверяем тип узла, если не ссылка выходим из функции
-    if (target.nodeName !== 'A') return
+    // будет window, так как мы используем стрелочную функцию,
+    // которая использует внешний контекст
+    // Если использовать обычную функцию то this будет самим элементом
+    // button и равен currentTarget
+    console.log('this: ', this);
+    console.log('target: ', event.target); // <button id="btn">CLICK ME!</button>
+};
 
-    setActiveLink(target)
-}
-
-function setActiveLink(nextActiveLink) {
-    const currentActiveLink = nav.querySelector('a.active')
-
-    if (currentActiveLink) {
-        currentActiveLink.classList.remove('active')
-    }
-
-    nextActiveLink.classList.add('active')
-}
+btn.addEventListener('click', handleClick);
